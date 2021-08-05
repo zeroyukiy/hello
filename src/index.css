@@ -1,3 +1,8 @@
+:root {
+  --card-width: 180px;
+  --card-height: 220px;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +10,45 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: hsl(205.38,86.67%,94.12%);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.navbar {
+  width: 100%;
+  height: 4em;
+  /* background-color: hsl(206.71,89.02%,67.84%); */
+  background: hsl(207, 89%, 68%);
+  background: linear-gradient(90deg, hsl(207, 89%, 68%) 0%, hsla(207, 89%, 68%, 0.4) 100%); 
+  border-bottom: 2px solid rgba(0,0,0,.08);
+}
+
+.card {
+  width: var(--card-width);
+  height: var(--card-height);
+  padding: 1em;
+  margin: 1.5em 0.4em;
+  border-radius: 0.5em;
+  background-color: white;
+  box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1180px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 30px auto;
+}
+
+@media screen and (max-width: 480px) {
+  .card {
+    width: calc(var(--card-width) * 1.5);
+    height: calc(var(--card-height) * 1.5);
+  }
 }
